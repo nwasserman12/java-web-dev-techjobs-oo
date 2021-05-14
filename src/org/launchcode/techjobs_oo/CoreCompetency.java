@@ -19,9 +19,10 @@ public class CoreCompetency {
 
     // Custom toString, equals, and hashCode methods:
 
+
     @Override
     public String toString() {
-        return value;
+        return "Core Competency:" + value + '\'';
     }
 
     @Override

@@ -61,7 +61,11 @@ public class JobTest {
         assertFalse(test_job.getId() == test_jobNewId.getId());
     }
     @Test
-    public void testToString(){
-
+    public void testToStringBlankSpaces(){
+        String toString = test_job.toString();
+        assertTrue(toString.contains("id= "+ test_job.getId() + "\'"));
+    }
+    @Test
+    public void testToStringContainsLabelForEach(){
     }
 }

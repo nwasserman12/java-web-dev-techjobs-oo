@@ -44,6 +44,21 @@ public class Job {
         return Objects.hash(id);
     }
 
+    //TODO: toString method added below.
+
+    @Override
+    public String toString() {
+        return "Job{" +
+                "id= " + id + '\'' +
+                "name= '" + name + '\'' +
+                "employer= " + employer + '\'' +
+                "location= " + location + '\'' +
+                "positionType= " + positionType + '\'' +
+                "coreCompetency= " + coreCompetency + '\'' +
+                '}';
+    }
+
+
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 

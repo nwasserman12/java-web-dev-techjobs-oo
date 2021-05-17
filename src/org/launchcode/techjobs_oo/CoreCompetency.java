@@ -22,7 +22,7 @@ public class CoreCompetency {
 
     @Override
     public String toString() {
-        return "Core Competency:" + value + '\'';
+        return "Core Competency: " + value + '\'';
     }
 
     @Override

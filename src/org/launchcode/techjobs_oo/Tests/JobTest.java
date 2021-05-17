@@ -63,9 +63,19 @@ public class JobTest {
     @Test
     public void testToStringBlankSpaces(){
         String toString = test_job.toString();
-        assertTrue(toString.contains("id= "+ test_job.getId() + "\'"));
+        assertTrue(toString.contains("Id: "+ test_job.getId() + "\'"));
     }
     @Test
-    public void testToStringContainsLabelForEach(){
+    public void testToStringHasLabelForEachOnOwnLine(){
+        String toString = test_job.toString();
+        assertTrue(toString.contains("Id: " + test_job.getId() + '\'' + "Name: " + test_job.getName()
+                + '\'' + "Employer: " + test_job.getEmployer() +'\'' + "Location: " +
+                test_job.getLocation() + '\'' + "Position Type: " +test_job.getPositionType()
+                + '\'' + "Core Competency: " + test_job.getCoreCompetency() + '\''));
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testToStringThrowsErrorIfNoData(){
+        //not sure how to write this but the fail goes below
+        fail("Data not available");
     }
 }

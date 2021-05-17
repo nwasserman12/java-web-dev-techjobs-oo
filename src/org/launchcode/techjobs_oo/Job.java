@@ -49,12 +49,12 @@ public class Job {
     @Override
     public String toString() {
         return "Job{" +
-                "id= " + id + '\'' +
-                "name= '" + name + '\'' +
-                "employer= " + employer + '\'' +
-                "location= " + location + '\'' +
-                "positionType= " + positionType + '\'' +
-                "coreCompetency= " + coreCompetency + '\'' +
+                "Id: " + id + '\'' +
+                "Name: " + name + '\'' +
+                "Employer: " + employer + '\'' +
+                "Location: " + location + '\'' +
+                "Position Type: " + positionType + '\'' +
+                "Core Competency: " + coreCompetency + '\'' +
                 '}';
     }
 

@@ -38,22 +38,22 @@ public class JobTest {
     @Test
     public void testSettingJobEmployer(){
         assertTrue(test_job.getEmployer() instanceof Employer);
-//        assertEquals("ACME", test_job.getEmployer());
+        assertEquals("ACME", test_job.getEmployer().getValue());
     }
     @Test
     public void testSettingJobLocation(){
         assertTrue(test_job.getLocation() instanceof Location);
-//        assertEquals("Desert", test_job.getLocation());
+        assertEquals("Desert", test_job.getLocation().getValue());
     }
     @Test
     public void testSettingJobPositionType(){
         assertTrue(test_job.getPositionType() instanceof PositionType);
-//        assertEquals("Quality control", test_job.getPositionType());
+        assertEquals("Quality control", test_job.getPositionType().getValue());
     }
     @Test
     public void testSettingJobCoreCompetency(){
         assertTrue((test_job.getCoreCompetency() instanceof CoreCompetency));
-//        assertEquals("Persistence", test_job.getCoreCompetency());
+        assertEquals("Persistence", test_job.getCoreCompetency().getValue());
     }
     @Test
     public void testJobsForEquality(){
@@ -73,9 +73,9 @@ public class JobTest {
                 test_job.getLocation() + '\'' + "Position Type: " +test_job.getPositionType()
                 + '\'' + "Core Competency: " + test_job.getCoreCompetency() + '\''));
     }
-    @Test(expected = IllegalArgumentException.class)
-    public void testToStringThrowsErrorIfNoData(){
-        //not sure how to write this but the fail goes below
-        fail("Data not available");
+    @Test
+    public void testToStringDataNotAvailable(){
+        Job testJobMissingData = new Job("", new Employer(""), new Location("Location"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals(testJobMissingData.toString(), "Job{Id: 4'Name: Data not available'Employer: Employer: Data not available''Location: Location'Position Type: Position Type: Quality control''Core Competency: Core Competency: Persistence''}");
     }
 }

@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -48,15 +49,30 @@ public class Job {
 
     @Override
     public String toString() {
-        return "Job{" +
+        if(this.name == "") {
+            this.setName("Data not available");
+        }
+        if (this.employer.getValue() == "") {
+            this.employer.setValue("Data not available");
+        }
+        if (this.location.getValue() == "") {
+            this.location.setValue("Data not available");
+        } if (this.positionType.getValue() == "") {
+            this.positionType.setValue("Data not available");
+        }
+        if (this.coreCompetency.getValue() == "") {
+            this.coreCompetency.setValue("Data not available");
+        }
+        String stringReturned = ("Job{" +
                 "Id: " + id + '\'' +
                 "Name: " + name + '\'' +
                 "Employer: " + employer + '\'' +
                 "Location: " + location + '\'' +
                 "Position Type: " + positionType + '\'' +
                 "Core Competency: " + coreCompetency + '\'' +
-                '}';
-    }
+                '}');
+        return stringReturned;
+        }
 
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
@@ -105,4 +121,5 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
 }

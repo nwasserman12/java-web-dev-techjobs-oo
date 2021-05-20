@@ -63,19 +63,27 @@ public class JobTest {
     @Test
     public void testToStringBlankSpaces(){
         String toString = test_job.toString();
-        assertTrue(toString.contains("Id: "+ test_job.getId() + "\'"));
+        assertTrue(toString.contains("Id: "+ test_job.getId() + "\n"));
     }
     @Test
     public void testToStringHasLabelForEachOnOwnLine(){
         String toString = test_job.toString();
-        assertTrue(toString.contains("Id: " + test_job.getId() + '\'' + "Name: " + test_job.getName()
-                + '\'' + "Employer: " + test_job.getEmployer() +'\'' + "Location: " +
-                test_job.getLocation() + '\'' + "Position Type: " +test_job.getPositionType()
-                + '\'' + "Core Competency: " + test_job.getCoreCompetency() + '\''));
+        assertTrue(toString.contains("Id: " + test_job.getId() + '\n' + "Name: " + test_job.getName()
+                + '\n' + "Employer: " + test_job.getEmployer() +'\n' + "Location: " +
+                test_job.getLocation() + '\n' + "Position Type: " +test_job.getPositionType()
+                + '\n' + "Core Competency: " + test_job.getCoreCompetency() + '\n'));
     }
     @Test
     public void testToStringDataNotAvailable(){
         Job testJobMissingData = new Job("", new Employer(""), new Location("Location"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals(testJobMissingData.toString(), "Job{Id: 4'Name: Data not available'Employer: Employer: Data not available''Location: Location'Position Type: Position Type: Quality control''Core Competency: Core Competency: Persistence''}");
+        assertEquals(testJobMissingData.toString(), "Id: 7" + "\n" + "Name: Data not available" + "\n" +
+                "Employer: Data not available" + "\n" + "Location: Location" + "\n" + "Position Type: Quality control"
+                +"\n" + "Core Competency: Persistence" + "\n");
     }
+
+//    @Test(expected = IllegalArgumentException.class)
+//    public void testToStringThrowsErrorOnlyId(){
+//        test_jobId1.toString();
+//        fail("OOPS! This job does not seem to exist.");
+//    }
 }

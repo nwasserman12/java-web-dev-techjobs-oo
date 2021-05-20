@@ -63,14 +63,16 @@ public class Job {
         if (this.coreCompetency.getValue() == "") {
             this.coreCompetency.setValue("Data not available");
         }
-        String stringReturned = ("Job{" +
-                "Id: " + id + '\'' +
-                "Name: " + name + '\'' +
-                "Employer: " + employer + '\'' +
-                "Location: " + location + '\'' +
-                "Position Type: " + positionType + '\'' +
-                "Core Competency: " + coreCompetency + '\'' +
-                '}');
+//        if(this.name == "" & this.employer.getValue() == ""& this.location.getValue() == ""& this.positionType.getValue() == ""& this.coreCompetency.getValue() == ""){
+//            throw new IllegalAccessException("OOPS! This job does not seem to exist.");
+//        }
+        String stringReturned = (
+                "Id: " + id + '\n' +
+                "Name: " + name + '\n' +
+                "Employer: " + employer + '\n' +
+                "Location: " + location + '\n' +
+                "Position Type: " + positionType + '\n' +
+                "Core Competency: " + coreCompetency + '\n' );
         return stringReturned;
         }
 
